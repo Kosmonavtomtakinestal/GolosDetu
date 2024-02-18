@@ -24,12 +24,16 @@ namespace LSDA.View
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void OpeningAccountClickButton(object sender, RoutedEventArgs e)
         {
+            if (App.CurrentUser != null)
+                return;
 
+            new RegLogWindow().Show();
+            Close();
         }
 
-        private void ListBox_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void ListParticipantsMouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
 
         }

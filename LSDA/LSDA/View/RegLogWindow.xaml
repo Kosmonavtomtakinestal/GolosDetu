@@ -9,6 +9,7 @@
     Width="800"
     Height="550"
     Icon="pack://application:,,,/Resource/Image/iconForWin.png"
+    WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <TabControl
         x:Name="Menu"
@@ -238,6 +239,17 @@
                         Foreground="IndianRed" />
                 </StackPanel>
             </TabItem.Content>
+        </TabItem>
+        <TabItem>
+            <TabItem.Header>
+                <StackPanel Orientation="Horizontal">
+                    <Ellipse
+                        Width="10"
+                        Height="10"
+                        Fill="Black" />
+                    <TextBlock Margin="3" Text="Назад" />
+                </StackPanel>
+            </TabItem.Header>
         </TabItem>
     </TabControl>
 </Window>

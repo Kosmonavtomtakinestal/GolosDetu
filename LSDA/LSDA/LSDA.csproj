@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <None Remove="Resource\Image\iconForWin.png" />
+    <None Remove="Resource\Image\Log.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +25,9 @@
 
   <ItemGroup>
     <Resource Include="Resource\Image\iconForWin.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\Image\Log.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

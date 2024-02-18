@@ -1,4 +1,5 @@
 ﻿using LSDA.Database;
+using LSDA.Database.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Windows;
 
@@ -8,6 +9,7 @@ namespace LSDA
     {
         public static readonly DatabaseContext DatabaseContext = new();
 
+        public static User CurrentUser { get; set; }
         public App()
         {
             DatabaseContext.Users.Load();
@@ -17,5 +19,4 @@ namespace LSDA
             DatabaseContext.Results.Load();
         }
     }
-
 }

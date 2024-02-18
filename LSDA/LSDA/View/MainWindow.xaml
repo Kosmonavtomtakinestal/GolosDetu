@@ -9,6 +9,7 @@
     Width="800"
     Height="450"
     DataContext="{Binding RelativeSource={RelativeSource Self}}"
+    Icon="pack://application:,,,/Resource/Image/iconForWin.png"
     mc:Ignorable="d">
     <DockPanel>
         <Grid Margin="0,10,0,0" DockPanel.Dock="Top">
@@ -19,11 +20,15 @@
                 Text="Приложение для голосования: ЛСДА" />
 
             <Button
+                Width="auto"
                 Margin="0,0,20,0"
+                Padding="0"
                 HorizontalAlignment="Right"
+                Background="Transparent"
+                BorderBrush="Transparent"
                 Click="Button_Click"
                 DockPanel.Dock="Right">
-                <Image />
+                <Image Width="40" Source="pack://application:,,,/Resource/Image/log.icon" />
             </Button>
         </Grid>
 
@@ -37,7 +42,8 @@
                 Padding="5"
                 d:ItemsSource="{d:SampleData ItemCount=6}"
                 ItemContainerStyle="{StaticResource {x:Type ListBoxItem}}"
-                ItemsSource="{Binding Participants}">
+                ItemsSource="{Binding Participants}"
+                MouseDoubleClick="ListBox_MouseDoubleClick">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <DockPanel>

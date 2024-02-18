@@ -1,0 +1,63 @@
+﻿<hc:Window
+    x:Class="LSDA.View.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:hc="https://handyorg.github.io/handycontrol"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="ЛСДА"
+    Width="800"
+    Height="450"
+    DataContext="{Binding RelativeSource={RelativeSource Self}}"
+    mc:Ignorable="d">
+    <DockPanel>
+        <Grid Margin="0,10,0,0" DockPanel.Dock="Top">
+            <TextBlock
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Style="{StaticResource {x:Type TextBlock}}"
+                Text="Приложение для голосования: ЛСДА" />
+
+            <Button
+                Margin="0,0,20,0"
+                HorizontalAlignment="Right"
+                Click="Button_Click"
+                DockPanel.Dock="Right">
+                <Image />
+            </Button>
+        </Grid>
+
+        <Border
+            Margin="10,10,10,0"
+            BorderBrush="Gray"
+            BorderThickness="1"
+            CornerRadius="5"
+            DockPanel.Dock="Bottom">
+            <ListBox
+                Padding="5"
+                d:ItemsSource="{d:SampleData ItemCount=6}"
+                ItemContainerStyle="{StaticResource {x:Type ListBoxItem}}"
+                ItemsSource="{Binding Participants}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <DockPanel>
+                            <Image
+                                MaxWidth="100"
+                                Margin="0,0,10,0"
+                                VerticalAlignment="Center"
+                                DockPanel.Dock="Left"
+                                Source="{Binding Photo}" />
+                            <DockPanel DockPanel.Dock="Right">
+                                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                                    <TextBlock Margin="0,0,20,0" Text="{Binding Path=Fullname, StringFormat=ФИО: {0}}" />
+                                    <TextBlock Text="{Binding Path=Party.Title, StringFormat=Партия: {0}}" />
+                                </StackPanel>
+                                <TextBlock DockPanel.Dock="Bottom" Text="{Binding Description}" />
+                            </DockPanel>
+                        </DockPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Border>
+    </DockPanel>
+</hc:Window>

@@ -10,6 +10,9 @@
     <Compile Update="View\RegLogWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\ShowParticipantWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Resource\Styles\Style.xaml">
@@ -19,6 +22,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\RegLogWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ShowParticipantWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

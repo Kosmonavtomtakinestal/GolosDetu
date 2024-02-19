@@ -14,7 +14,13 @@ namespace LSDA.View
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (Menu.SelectedIndex == 0)
+            if (ExitTabItem.IsSelected)
+            {
+                new MainWindow().Show();
+                Close();
+            }
+
+            if (Auto.IsSelected)
             {
                 AutoEll.Fill = Brushes.Black;
                 RegEll.Fill = Brushes.Gray;

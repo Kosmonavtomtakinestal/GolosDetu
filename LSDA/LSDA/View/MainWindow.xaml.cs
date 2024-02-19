@@ -35,7 +35,16 @@ namespace LSDA.View
 
         private void ListParticipantsMouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
+            if (MainList.SelectedItem == null)
+                return;
 
+            new ShowParticipantWindow((MainList.SelectedItem as Participant)!).ShowDialog();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (App.CurrentUser == null)
+                Logbutton.Visibility = Visibility.Visible;
         }
     }
 }

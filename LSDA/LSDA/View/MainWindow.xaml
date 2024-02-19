@@ -10,6 +10,7 @@
     Height="450"
     DataContext="{Binding RelativeSource={RelativeSource Self}}"
     Icon="pack://application:,,,/Resource/Image/iconForWin.png"
+    Loaded="Window_Loaded"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <DockPanel>
@@ -21,6 +22,7 @@
                 Text="Приложение для голосования: ЛСДА" />
 
             <Button
+                x:Name="Logbutton"
                 Width="auto"
                 Margin="0,0,20,0"
                 Padding="0"
@@ -28,7 +30,8 @@
                 Background="Transparent"
                 BorderBrush="Transparent"
                 Click="OpeningAccountClickButton"
-                DockPanel.Dock="Right">
+                DockPanel.Dock="Right"
+                Visibility="Collapsed">
                 <Image Width="40" Source="pack://application:,,,/Resource/Image/Log.png" />
             </Button>
         </Grid>
@@ -40,6 +43,7 @@
             CornerRadius="5"
             DockPanel.Dock="Bottom">
             <ListBox
+                x:Name="MainList"
                 Padding="5"
                 d:ItemsSource="{d:SampleData ItemCount=6}"
                 ItemContainerStyle="{StaticResource {x:Type ListBoxItem}}"

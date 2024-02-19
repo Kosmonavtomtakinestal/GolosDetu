@@ -52,6 +52,7 @@
                                 CornerRadius="5">
                                 <TextBox
                                     x:Name="AutoPhoneTextBox"
+                                    MaxWidth="200"
                                     BorderBrush="Transparent"
                                     TextWrapping="Wrap" />
                             </Border>
@@ -65,6 +66,7 @@
                                 CornerRadius="5">
                                 <TextBox
                                     x:Name="AutoIINTextBox"
+                                    MaxWidth="200"
                                     BorderBrush="Transparent"
                                     TextWrapping="Wrap" />
                             </Border>
@@ -128,6 +130,7 @@
                                         CornerRadius="5">
                                         <TextBox
                                             x:Name="RegNameTextBox"
+                                            MaxWidth="150"
                                             BorderBrush="Transparent"
                                             TextWrapping="Wrap" />
                                     </Border>
@@ -142,6 +145,7 @@
                                         CornerRadius="5">
                                         <TextBox
                                             x:Name="RegSurnameTextBox"
+                                            MaxWidth="150"
                                             BorderBrush="Transparent"
                                             TextWrapping="Wrap" />
                                     </Border>
@@ -156,6 +160,7 @@
                                         CornerRadius="5">
                                         <TextBox
                                             x:Name="RegPatronymicTextBox"
+                                            MaxWidth="150"
                                             BorderBrush="Transparent"
                                             TextWrapping="Wrap" />
                                     </Border>
@@ -177,6 +182,7 @@
                                         CornerRadius="5">
                                         <TextBox
                                             x:Name="RegSeriesTextBox"
+                                            Width="110"
                                             BorderBrush="Transparent"
                                             TextWrapping="Wrap" />
                                     </Border>
@@ -190,6 +196,7 @@
                                         CornerRadius="5">
                                         <TextBox
                                             x:Name="RegNumberTextBox"
+                                            Width="190"
                                             BorderBrush="Transparent"
                                             TextWrapping="Wrap" />
                                     </Border>
@@ -253,7 +260,7 @@
                             Width="10"
                             Height="10"
                             Fill="IndianRed" />
-                        <TextBlock Margin="3" Text="Назад" />
+                        <TextBlock Margin="3" Text="Список всех претендентов" />
                     </StackPanel>
                 </TabItem.Header>
             </TabItem>

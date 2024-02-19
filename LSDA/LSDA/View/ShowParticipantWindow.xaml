@@ -1,0 +1,32 @@
+﻿<Window
+    x:Class="LSDA.View.ShowParticipantWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Претендент"
+    DataContext="{Binding RelativeSource={RelativeSource Self}}"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid Margin="5,10" IsEnabled="True">
+        <StackPanel>
+            <Image Width="200" Source="{Binding CurrentParticipant.Photo}" />
+
+            <TextBlock
+                MaxWidth="500"
+                Margin="0,10,0,0"
+                Style="{StaticResource {x:Type TextBlock}}"
+                Text="{Binding CurrentParticipant.FullName, StringFormat=ФИО: {0}}"
+                TextWrapping="Wrap" />
+
+            <TextBlock
+                MaxWidth="500"
+                Margin="0,10,0,0"
+                Style="{StaticResource {x:Type TextBlock}}"
+                Text="{Binding CurrentParticipant.Party.Title, StringFormat=Партия: {0}}"
+                TextWrapping="Wrap" />
+
+            <TextBlock Margin="0,10,0,0" Text="{Binding CurrentParticipant.Description}" />
+        </StackPanel>
+    </Grid>
+</Window>

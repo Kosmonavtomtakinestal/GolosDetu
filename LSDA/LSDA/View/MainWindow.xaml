@@ -35,7 +35,6 @@
                 <Image Width="40" Source="pack://application:,,,/Resource/Image/Log.png" />
             </Button>
         </Grid>
-
         <Border
             Margin="10,10,10,0"
             BorderBrush="Gray"

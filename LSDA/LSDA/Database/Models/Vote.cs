@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace LSDA.Database.Models;
+﻿namespace LSDA.Database.Models;
 
 public partial class Vote
 {

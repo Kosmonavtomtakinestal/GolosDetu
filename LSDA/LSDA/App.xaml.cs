@@ -9,10 +9,11 @@ namespace LSDA
     {
         public static readonly DatabaseContext DatabaseContext = new();
 
-        public static User CurrentUser { get; set; }
+        public static User? CurrentUser { get; set; }
         public App()
         {
             DatabaseContext.Users.Load();
+            DatabaseContext.Parties.Load();
             DatabaseContext.Votes.Load();
             DatabaseContext.Roles.Load();
             DatabaseContext.Participants.Load();

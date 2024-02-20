@@ -5,7 +5,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Претендент"
+    Width="600"
+    Height="auto"
     DataContext="{Binding RelativeSource={RelativeSource Self}}"
+    Icon="pack://application:,,,/Resource/Image/iconForWin.png"
+    Loaded="Window_Loaded"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid Margin="5,10" IsEnabled="True">
@@ -13,20 +17,41 @@
             <Image Width="200" Source="{Binding CurrentParticipant.Photo}" />
 
             <TextBlock
-                MaxWidth="500"
                 Margin="0,10,0,0"
+                HorizontalAlignment="Center"
                 Style="{StaticResource {x:Type TextBlock}}"
                 Text="{Binding CurrentParticipant.FullName, StringFormat=ФИО: {0}}"
                 TextWrapping="Wrap" />
 
             <TextBlock
-                MaxWidth="500"
                 Margin="0,10,0,0"
+                HorizontalAlignment="Center"
                 Style="{StaticResource {x:Type TextBlock}}"
                 Text="{Binding CurrentParticipant.Party.Title, StringFormat=Партия: {0}}"
                 TextWrapping="Wrap" />
 
-            <TextBlock Margin="0,10,0,0" Text="{Binding CurrentParticipant.Description}" />
+            <TextBlock
+                Margin="0,10,0,0"
+                HorizontalAlignment="Center"
+                Text="{Binding CurrentParticipant.Description}"
+                TextWrapping="Wrap" />
+
+            <StackPanel
+                x:Name="Golos"
+                Margin="0,20,0,0"
+                HorizontalAlignment="Center"
+                Orientation="Horizontal"
+                Visibility="Collapsed">
+
+                <TextBlock Margin="0,0,10,0" Text="Оставить свой голос:" />
+
+                <CheckBox
+                    x:Name="IsGolos"
+                    Checked="IsGolos_Checked"
+                    Content="Я голосую за данного кандидата"
+                    IsChecked="False"
+                    Unchecked="IsGolos_Unchecked" />
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>

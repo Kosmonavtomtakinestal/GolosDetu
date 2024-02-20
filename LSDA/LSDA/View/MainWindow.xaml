@@ -6,8 +6,8 @@
     xmlns:hc="https://handyorg.github.io/handycontrol"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="ЛСДА"
-    Width="800"
-    Height="450"
+    Width="900"
+    Height="550"
     DataContext="{Binding RelativeSource={RelativeSource Self}}"
     Icon="pack://application:,,,/Resource/Image/iconForWin.png"
     Loaded="Window_Loaded"
@@ -47,24 +47,45 @@
                 d:ItemsSource="{d:SampleData ItemCount=6}"
                 ItemContainerStyle="{StaticResource {x:Type ListBoxItem}}"
                 ItemsSource="{Binding Participants}"
-                MouseDoubleClick="ListParticipantsMouseDoubleClick">
+                MouseDoubleClick="ListParticipantsMouseDoubleClick"
+                ScrollViewer.CanContentScroll="False">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <DockPanel>
-                            <Image
-                                MaxWidth="100"
-                                Margin="0,0,10,0"
-                                VerticalAlignment="Center"
-                                DockPanel.Dock="Left"
-                                Source="{Binding Photo}" />
-                            <DockPanel DockPanel.Dock="Right">
-                                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
-                                    <TextBlock Margin="0,0,20,0" Text="{Binding Path=Fullname, StringFormat=ФИО: {0}}" />
-                                    <TextBlock Text="{Binding Path=Party.Title, StringFormat=Партия: {0}}" />
-                                </StackPanel>
-                                <TextBlock DockPanel.Dock="Bottom" Text="{Binding Description}" />
+                        <Border
+                            Margin="0,5"
+                            Padding="2"
+                            BorderBrush="Gray"
+                            BorderThickness="2"
+                            CornerRadius="2">
+                            <DockPanel Margin="0,10,0,10">
+                                <Image
+                                    MaxWidth="100"
+                                    Margin="0,0,10,0"
+                                    VerticalAlignment="Center"
+                                    DockPanel.Dock="Left"
+                                    Source="{Binding Photo}" />
+                                <DockPanel DockPanel.Dock="Right">
+                                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                                        <TextBlock
+                                            MaxWidth="500"
+                                            Margin="0,0,20,0"
+                                            Text="{Binding Path=FullName}"
+                                            TextWrapping="Wrap" />
+                                        <TextBlock
+                                            MaxWidth="600"
+                                            Text="{Binding Path=Party.Title, StringFormat=|     Партия: {0}}"
+                                            TextWrapping="Wrap" />
+                                    </StackPanel>
+                                    <TextBlock
+                                        MaxWidth="900"
+                                        Margin="0,15,0,0"
+                                        HorizontalAlignment="Left"
+                                        DockPanel.Dock="Bottom"
+                                        Text="{Binding Description}"
+                                        TextWrapping="Wrap" />
+                                </DockPanel>
                             </DockPanel>
-                        </DockPanel>
+                        </Border>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
